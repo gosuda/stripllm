@@ -1,0 +1,67 @@
+package replace
+
+import "strings"
+
+var gptWordsReplacer = strings.NewReplacer(
+	" delve into ", " explore ",
+	" Delve into ", " Explore ",
+	" delve ", " explore ",
+	" Delve ", " Explore ",
+	" delving ", " exploring ",
+	" Delving ", " Exploring ",
+	" synergistic ", " collaborative ",
+	" Synergistic ", " Collaborative ",
+	" synergistically ", " collaboratively ",
+	" Synergistically ", " Collaboratively ",
+	" synergize ", " collaborate ",
+	" Synergize ", " Collaborate ",
+	" embark ", " begin ",
+	" Embark ", " Begin ",
+	" embarking on ", " beginning ",
+	" Embarking on ", " Beginning ",
+	" embarking ", " beginning ",
+	" Embarking ", " Beginning ",
+	" elucidate ", " explain ",
+	" Elucidate ", " Explain ",
+	" exemplify ", " illustrate ",
+	" Exemplify ", " Illustrate ",
+	" expound ", " explain ",
+	" Expound ", " Explain ",
+	" illuminate ", " clarify ",
+	" Illuminate ", " Clarify ",
+	" illustrate ", " show ",
+	" Illustrate ", " Show ",
+	" interpret ", " explain ",
+	" Interpret ", " Explain ",
+	" juxtapose ", " compare ",
+	" Juxtapose ", " Compare ",
+	" juxtaposition ", " comparison ",
+	" Juxtaposition ", " Comparison ",
+	" leverage ", " use ",
+	" Leverage ", " Use ",
+	" leveraging ", " using ",
+	" Leveraging ", " Using ",
+	" dive deep ", " explore ",
+	" Dive deep ", " Explore ",
+	" diving into ", " exploring ",
+	" Diving into ", " Exploring ",
+	" immersing ", " engaging ",
+	" Immersing ", " Engaging ",
+	" immerse ", " engage ",
+	" Immerse ", " Engage ",
+	" immersion ", " engagement ",
+	" Immersion ", " Engagement ",
+	" plunging ", " diving ",
+	" Plunging ", " Diving ",
+	"**and**", " and ",
+	"*)**", ")",
+	"***)", ")",
+	"**(*", "(",
+	"***(", "(",
+)
+
+// ReplaceGPTWords replaces certain words and phrases commonly used by GPT models with more natural alternatives.
+func ReplaceGPTWords(s string) string {
+	s = gptWordsReplacer.Replace(s)
+	return s
+}
